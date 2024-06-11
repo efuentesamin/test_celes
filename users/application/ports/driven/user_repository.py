@@ -1,12 +1,12 @@
 
 from abc import ABC, abstractmethod
 
-from users.domain.entities.user import User
+from users.application.schemas.user import User, UserCreate
 
 
 class UserRepositoryInterface(ABC):
     
     @abstractmethod
-    def save(self, user: User) -> User:
+    def create(self, user: UserCreate) -> User:
         raise NotImplementedError
 
