@@ -15,6 +15,7 @@ class User:
         if not self.id:
             bytes = password.encode('utf-8')
             salt = bcrypt.gensalt()
-            password = bcrypt.hashpw(bytes, salt)
+            hash = bcrypt.hashpw(bytes, salt)
+            password = hash.decode('utf-8')
         
         self.password = password
